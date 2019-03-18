@@ -1,0 +1,123 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_ARRAY,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_ARDUINO_SERVO,CAT_TUAH,CAT_EUREQA</toolboxcategories>
+  <toolbox>toolbox_algo</toolbox>
+  <block type="base_setup_loop" id="PqaV+#k[LB_g:L_.We-X" x="-571" y="51">
+    <statement name="LOOP">
+      <block type="controls_if" id="ts/i`I||C}~=,lQY.L-S">
+        <value name="IF0">
+          <block type="eureqa_bluetooth_ready" id="VG:p$U]6{6=^CD*a/2cs"></block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="G4,?f|6I5)_]T{Y;TjT(">
+            <field name="VAR">data</field>
+            <value name="VALUE">
+              <block type="variables_set_type" id="!ss,E2Kj7jN7%(Xy=c+y">
+                <field name="VARIABLE_SETTYPE_TYPE">CHARACTER</field>
+                <value name="VARIABLE_SETTYPE_INPUT">
+                  <block type="eureqa_bluetooth_data" id="gcMtS5CisFXed.jOe{],"></block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="}N|~,[simbJHyP,l%-WV">
+                <value name="CONTENT">
+                  <block type="variables_get" id="c:!lodKtg[%VD4TBSrSb">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="B-K!#8).ks-@Zmz1mT3q">
+            <mutation elseif="2" else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id=".a9ZZWEGj4WGTWKtN%`L">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id=")I:Z$6xkm|ei}h*u{gP6">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_char" id="};rsRrZdN^iWdQTdpA-f">
+                    <field name="TEXT">1</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="eureqa_rgb" id="V9%.L0WfU,/w_yZxf;En">
+                <field name="color">0,255,0</field>
+                <field name="port">7,PORTD,PORTD7</field>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="i3jvW|2w3UxR[DI1|6S}">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="EhImlpB8+H#Pl}(Ha/Dr">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_char" id="^,Y6#Gipmh|=DDgjf)em">
+                    <field name="TEXT">2</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="eureqa_rgb" id="oW6@?OdfU1)`I,j!!P;J">
+                <field name="color">0,0,255</field>
+                <field name="port">7,PORTD,PORTD7</field>
+              </block>
+            </statement>
+            <value name="IF2">
+              <block type="logic_compare" id="s{Z)^7$)u*_}Qi7v+u.l">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="X:g7[w%;`Lse;4VJJ*Y`">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_char" id="z%Ul0V,/K0]zw[wA{oqk">
+                    <field name="TEXT">3</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO2">
+              <block type="eureqa_rgb" id="^JcL]K41C@}3h^z!~gqf">
+                <field name="color">255,0,0</field>
+                <field name="port">7,PORTD,PORTD7</field>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="eureqa_rgb_num" id="6BL8nDC})_sj+)a)_k7.">
+                <field name="port">13,PORTB,PORTB5</field>
+                <value name="red_color">
+                  <block type="math_number" id="t;*uBhtR?|8K3Fmi}cnk">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+                <value name="green_color">
+                  <block type="math_number" id="D_Z0Ng[_JX_WD_HZf[V+">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+                <value name="blue_color">
+                  <block type="math_number" id="~o|B9`[lE[HZN2w[[ul!">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,25 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_ARRAY,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_ARDUINO_SERVO,CAT_TUAH,CAT_EUREQA</toolboxcategories>
+  <toolbox>toolbox_algo</toolbox>
+  <block type="eureqa_rgb_num" id="j[e:SSOPgl0VUT+=G}Jv" x="-370" y="20">
+    <field name="port">7,PORTD,PORTD7</field>
+    <value name="red_color">
+      <block type="eureqa_sense" id="%!C`ULjq179,]48(1Y-9">
+        <field name="COLOR">RED</field>
+        <field name="PORTo">PORTC</field>
+      </block>
+    </value>
+    <value name="green_color">
+      <block type="eureqa_sense" id="k~NQ2QCNenz{`8B`D.Ty">
+        <field name="COLOR">GREEN</field>
+        <field name="PORTo">PORTC</field>
+      </block>
+    </value>
+    <value name="blue_color">
+      <block type="eureqa_sense" id="34J5XWkJqJk^PC)~9_^:">
+        <field name="COLOR">BLUE</field>
+        <field name="PORTo">PORTC</field>
+      </block>
+    </value>
+  </block>
+</xml>

@@ -1,0 +1,74 @@
+[
+    {
+        "source_url": "./eureka/ColorfulBlink.xml",
+        "source_text": "Blink with RGB euREQA",
+        "image": "./eureka/euREQA.png",
+        "link_url": "",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "./eureka/ColorTransition.xml",
+        "source_text": "Transition RGB euREQA",
+        "image": "./eureka/euREQA.png",
+        "link_url": "",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "./eureka/UltrasonicSerial.xml",
+        "source_text": "Ultrasonic to Serial",
+        "image": "./eureka/euREQA.png",
+        "link_url": "",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "./eureka/ObstacleSensorSerial.xml",
+        "source_text": "Obstacle Infrared Sensor to Serial Port",
+        "image": "./eureka/euREQA.png",
+        "link_url": "",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "./eureka/ColorSensorRGB.xml",
+        "source_text": "Color Sensor detect RED GREEN BLUE. Will give Character 'r' 'g' or 'b' to a variable.",
+        "image": "./eureka/euREQA.png",
+        "link_url": "",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "./eureka/LightSensorSerial.xml",
+        "source_text": "Light Sensor to Serial Port",
+        "image": "./eureka/euREQA.png",
+        "link_url": "",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "./eureka/BluetoothControlRGB.xml",
+        "source_text": "Bluetooth Control RGB",
+        "image": "./eureka/euREQA.png",
+        "link_url": "",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "./eureka/ColorSensorRGBRange.xml",
+        "source_text": "Color sensor detect value from 0-255 for r g and b then send it directly to RGB LED",
+        "image": "./eureka/euREQA.png",
+        "link_url": "",
+        "link_text": "",
+        "visible": true
+    },
+    {
+        "source_url": "./eureka/BluetoothControlMotor.xml",
+        "source_text": "Bluetooth Control Motor",
+        "image": "./eureka/euREQA.png",
+        "link_url": "",
+        "link_text": "",
+        "visible": true
+    }
+]

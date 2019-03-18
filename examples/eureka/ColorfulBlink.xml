@@ -1,0 +1,51 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_ARRAY,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_ARDUINO_SERVO,CAT_TUAH,CAT_EUREQA</toolboxcategories>
+  <toolbox>toolbox_algo</toolbox>
+  <block type="base_setup_loop" id="Rs;fT5U7GOA#KFM!K,gB" x="-750" y="-941">
+    <statement name="LOOP">
+      <block type="eureqa_rgb" id="/#8dezS!w=Va7Yne7u;z">
+        <field name="color">0,255,0</field>
+        <field name="port">7,PORTD,PORTD7</field>
+        <next>
+          <block type="base_delay" id="Bx!3j%}E$pkbFyjnrbaR">
+            <value name="DELAY_TIME">
+              <shadow type="math_number" id="FUQ$Vc=?Tg6ncLY2#dVD">
+                <field name="NUM">1000</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="eureqa_rgb" id="{@g%}ea%Nuu#lH!cj=a*">
+                <field name="color">0,0,255</field>
+                <field name="port">7,PORTD,PORTD7</field>
+                <next>
+                  <block type="base_delay" id="*+vssLMEXdb}X0{FflE_">
+                    <value name="DELAY_TIME">
+                      <shadow type="math_number" id="qh;+vW@BBX3DSQX{g@8(">
+                        <field name="NUM">1000</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="eureqa_rgb" id="KXQI)FbPPp@p[XeYFZ(8">
+                        <field name="color">255,0,0</field>
+                        <field name="port">7,PORTD,PORTD7</field>
+                        <next>
+                          <block type="base_delay" id="YLaMd_9a/PCI~0=nGkW@">
+                            <value name="DELAY_TIME">
+                              <shadow type="math_number" id="+uI1pyb+`xe2z:#`={Y:">
+                                <field name="NUM">1000</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

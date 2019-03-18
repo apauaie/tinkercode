@@ -1,0 +1,30 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_ARRAY,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_ARDUINO_SERVO,CAT_TUAH,CAT_EUREQA</toolboxcategories>
+  <toolbox>toolbox_algo</toolbox>
+  <block type="base_setup_loop" id="PqaV+#k[LB_g:L_.We-X" x="-571" y="51">
+    <statement name="LOOP">
+      <block type="variables_set" id="G4,?f|6I5)_]T{Y;TjT(">
+        <field name="VAR">data</field>
+        <value name="VALUE">
+          <block type="variables_set_type" id="a8:-a~iW+fU7n@f$QJLk">
+            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+            <value name="VARIABLE_SETTYPE_INPUT">
+              <block type="eureqa_ir" id="iuy!l12?cVFkxMQaC8RX">
+                <field name="port">A2</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="serial_println" id="}N|~,[simbJHyP,l%-WV">
+            <value name="CONTENT">
+              <block type="variables_get" id="c:!lodKtg[%VD4TBSrSb">
+                <field name="VAR">data</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,338 @@
+<html>
+
+<head>
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TinkerCode</title>
+	<!--load first for menus-->
+	<link rel="stylesheet" type="text/css" href="css/menu.css" />
+	<script type="text/javascript" src="core_Blockly/blockly_compressed.js"></script>
+	<!-- needed for type of variable -->
+	<script type="text/javascript" src="core_Ardublockly/type.js"></script>
+	<script type="text/javascript" src="core_Ardublockly/types.js"></script>
+	<script type="text/javascript" src="core_Ardublockly/static_typing.js"></script>
+	<script type="text/javascript" src="core_Ardublockly/instances.js"></script>
+	<script type="text/javascript" src="core_Ardublockly/field_instance.js"></script>
+	<script type="text/javascript" src="core_Ardublockly/block.js"></script>
+	<!--Arduino generator, must be defined NOW-->
+	<script type="text/javascript" src="generators/generator_arduino.js"></script>
+	<script type="text/javascript" src="blockly_helper.js"></script>
+
+	<script type="text/javascript" src="plugin/bootstrap-sweetalert-master/dist/sweetalert.js"></script>
+	<link rel="stylesheet" href="plugin/bootstrap-sweetalert-master/dist/sweetalert.css" crossorigin="anonymous">
+
+	<script type="text/javascript" src="core_BlocklyArduino/blockly@rduino.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/blockly@rduino_boards.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/blockly@rduino_functions_buttons.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/blockly@rduino_tools.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/blockly@rduino_visual.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/libs/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/libs/jquery-ui.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/libs/bootstrap.min.3.3.6.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/libs/bootstrap-toggle.min.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/libs/clipboard.min.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/libs/head.load.min.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/libs/jscolor.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/libs/prettify.js"></script>
+	<script type="text/javascript" src="core_BlocklyArduino/libs/smoothie.js"></script>
+	<!--TechnoZone51-->
+	<script type="text/javascript" src="tools/TZ51/html2canvas.js"></script>
+	<script type="text/javascript" src="tools/TZ51/canvas2image.js"></script>
+	<!--Fin TZ51-->
+	<!-- define all additional blocks from one resumer-->
+	<script type="text/javascript" src="blocks/arduino_resume.js"></script>
+	<script type="text/javascript" src="generators/arduino_resume.js"></script>
+	<script type="text/javascript" src="lang/code.js"></script>
+	<!--link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.BlocklyArduino.css" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-toggle.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="css/prettify.css" />
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" type="text/css" href="css/blockly@rduino.css" />
+	<script type="text/javascript">
+		$(window).load(function () {
+			$(".loading").fadeOut("slow");
+		});
+		function saveCode() {
+			var fileName = window.prompt('What would you like to name your file?', 'TinkerCode-01')
+			//doesn't save if the user quits the save prompt
+			if (fileName) {
+				var blob = new Blob([Blockly.Arduino.workspaceToCode()], { type: 'text/plain;charset=utf-8' });
+				saveAs(blob, fileName + '.ino');
+			}
+		}
+	</script>
+	<?php
+         $lang = en;
+         $toolboxids=CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS;
+         $toolbox=toolbox_algo;
+         $sortby=C;
+         ?>
+</head>
+
+<body onload="BlocklyDuino.init()">
+	<div class="loading"></div>
+	<div id="header">
+		<div class="w3-container">
+			<div class=""><img align="right" src="images/tinkercode.png" alt="tinkercode" width="150" height=""></div>
+		</div>
+	</div>
+	</div>
+	</div>
+	<div id="divBody">
+		<div id="menuPanelBlockly">
+			<ul>
+				<li role="presentation" id="tab_blocks" class="active">
+					<a href="#content_blocks" aria-controls="content_blocks" role="tab" data-toggle="tab">
+						<span id="a_blocks"> </span>
+					</a>
+				</li>
+				<li role="presentation" id="tab_arduino">
+					<a href="#content_arduino" aria-controls="content_arduino" role="tab" data-toggle="tab">
+						<span id="a_arduino"></span>
+					</a>
+				</li>
+				<li style="float:right">
+					<button id="btn_undo" class="btn btn-default">
+						<span class="fa fa-undo"> </span>
+					</button>
+					<button id="btn_redo" class="btn btn-default">
+						<span class="fa fa-repeat"> </span>
+					</button>
+					<button id="btn_configGlobal" class="btn btn-default" data-toggle="modal" data-target="#configGlobalModal" onclick="populateSetting()">
+						<span class="fa fa-cogs"> </span>
+					</button>
+					<button title="Download Agent" id="btn_download" class="btn btn-default" data-toggle="modal" data-target="#downloadModal">
+						<span class="fa fa-archive"> </span>
+					</button>
+					<button title="Upload" id="btn_uploadPayload" class="btn btn-default" onclick="uploadPayload()"  >
+						<span class="glyphicon glyphicon-upload"></span>
+					</button>
+					<a id="btn_saveXML" class="btn btn-default" title="Save as XML file">
+						<span id="icon_btn_blocs_picture" class="glyphicon glyphicon-floppy-disk"> </span>
+					</a>
+					<button id="btn_fakeload" class="btn btn-default">
+						<span id="icon_btn_inline" class="glyphicon glyphicon-folder-open"> </span>
+					</button>
+					<button id="btn_about" class="btn btn-default" data-toggle="modal" data-target="#aboutModal">
+						<span class="glyphicon glyphicon-info-sign"></span>
+					</button>
+					<button id="btn_example" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+						<span class="glyphicon glyphicon-list-alt"> </span>
+					</button>
+				</li>
+			</ul>
+		</div>
+		<!-- Nav tabs -->
+		<div id="divTabpanel" role="tabpanel">
+			<!-- Tab panes -->
+			<div id="content_area" class="tab-content">
+				<div id="content_blocks" class="tab-pane active" style="position: relative;">
+					<button id="btn_delete" class="btn btn-danger">
+						<span class="glyphicon glyphicon-erase"> </span>
+						<span id="span_delete"> </span>
+					</button>
+				</div>
+				<div id="content_arduino" class="tab-pane">
+					<pre id="pre_arduino"></pre>
+					<div id="local_debug">
+						<iframe id="" width="100%" height="100%" frameborder="0"></iframe>
+					</div>
+				</div>
+				<div id="menuPanelFiles">
+				</div>
+				<input type="file" id="load" style="display: none;" />
+				<div id="div_tools_button">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modals -->
+	<!-- about modal -->
+	<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+					<h4>
+						<span class="glyphicon glyphicon-user"> </span>
+						<label class="modal-title" id="" />About TinkerCode
+					</h4>
+				</div>
+				<div class="modal-body">
+					<b> <span id="">This project was based on Google Blockly and other projects listed below. Credits goes to the
+							authors.This project is to support Arduino based Robot made by Thinkerspace and EarlyEduKids.</span> </b>
+					<br />
+					<br /> - Blocklyduino : (<a href='https://blocklyduino.github.io/BlocklyDuino/blockly/apps/blocklyduino/' target='blank'>https://blocklyduino.github.io/BlocklyDuino/blockly/apps/blocklyduino/</a>)
+					<br /> - Blockly@rduino : (<a href='https://github.com/technologiescollege/Blockly-at-rduino' target='blank'>https://github.com/technologiescollege/Blockly-at-rduino</a>)
+
+					<br /> - Blockly : (<a href='https://developers.google.com/blockly' target='blank'>https://developers.google.com/blockly</a>)
+					<br /> - BlocklyDuino : (<a href='https://github.com/BlocklyDuino/BlocklyDuino' target='blank'>https://github.com/BlocklyDuino/BlocklyDuino</a>)
+					<br /> - Ardublockly : (<a href='https://github.com/carlosperate/ardublockly' target='blank'>https://github.com/carlosperate/ardublockly</a>)
+					<br />
+					<br />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	</div>
+	<!-- ajax modal -->
+	<div class="modal fade" id="ajaxModal" tabindex="-1" role="dialog" aria-labelledby="ajaxModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+					<h4 class="modal-title" id="ajaxModalLabel"></h4>
+				</div>
+				<div class="modal-body">
+					<pre id="msg_ajax_ko"></pre>
+					<input type="checkbox" name="ajax_msg" id="ajax_msg" /> <span id="span_ajax_msg"> </span>
+				</div>
+				<div class="modal-footer">
+					<button id="btn_close_msg" type="button" class="btn btn-default" data-dismiss="modal"></button>
+					<button id="btn_valid_msg" type="button" class="btn btn-primary"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- edit code modal -->
+	<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+					<h4 class="modal-title" id="editModalLabel"></h4>
+				</div>
+				<div class="modal-body" id="modal-body-code">
+					<textarea id="edit_code" rows="20" cols="100"></textarea>
+				</div>
+				<div class="modal-footer">
+					<button id="btn_closeCode" type="button" class="btn btn-default" data-dismiss="modal"></button>
+					<button id="btn_validCode" type="button" class="btn btn-primary" data-dismiss="modal"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- global config modal -->
+	<div class="modal fade" id="configGlobalModal" tabindex="-1" role="dialog" aria-labelledby="configGlobalModalLabel"
+	 aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+					<h4>
+						<span class="glyphicon glyphicon-alert"> </span>
+						<!-- <label class="modal-title" id="configModalGlobalLabel" /> -->
+						<label class="modal-title">Settings</label>
+					</h4>
+				</div>
+				<div class="modal-body" id="modal-body-config-global">
+					<div class="modal-body-config-global_left">
+						<div id="divCard">
+							<span class="fa fa-language"></span> <label id="span_languageMenu"></label>
+							<select id="languageMenu">
+							</select>
+						</div>
+
+						<div id="divCard">
+							<select id="pinout" onmousemove="" onchange="" style="visibility: hidden">
+								<option value="none"></option>
+
+							</select>
+						</div>
+						<div id="divCard">
+							<span class="fa fa-microchip"></span> <label>Board Type</label>
+							<br>
+							<select id="board">
+								<option value="arduino:avr:uno">Arduino Uno</option>
+								<option value="arduino:avr:nano">Arduino Nano</option>
+								<option value="arduino:avr:nano:cpu=atmega328old">Arduino Nano(Old Bootloader)</option>
+								<option value="arduino:avr:diecimila">Arduino Duemilanove/Diecimila</option>
+								<option value="arduino:avr:mega">Arduino Mega</option>
+								<option value="arduino:avr:nano:cpu=atmega328">Tuah</option>
+								<option value="arduino:avr:nano:cpu=atmega328">euREQA</option>
+								<option value="arduino:avr:mega:cpu=atmega2560">Motive</option>
+							</select>
+						</div>
+						<div id="divCard">
+							<span class="fa fa-plug"></span> <label>Port</label>
+							<br>
+							<select id="port">
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button id="btn_updateSetting" type="button" class="btn btn-primary" onclick="updateSetting()">Update</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- global download modal -->
+	<div class="modal fade" id="downloadModal" tabindex="-1" role="dialog" aria-labelledby="downloadModallabel"
+	 aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+					<h4>
+						<span class="glyphicon glyphicon-alert"> </span>
+						<!-- <label class="modal-title" id="configModalGlobalLabel" /> -->
+						<label class="modal-title">Download Agent</label>
+					</h4>
+				</div>
+				<div class="modal-body" id="modal-body-config-global">
+					<div class="modal-body-config-global_left">
+						<div align="center" id="divCard">
+							<a class="btn btn-lg btn-warning" href="agents/TinkerCodeSetup32bitPackage1_0_4.exe">
+								<i class="fa fa-windows fa-2x pull-left"></i> Download TinkerCode 32-bit Package<br>(include drivers, libraries and Arduino)<br>for Windows</a>
+							<br><br>
+							<a class="btn btn-lg btn-danger" href="agents/TinkerCodeSetup64bitPackage1_0_4.exe">
+								<i class="fa fa-windows fa-2x pull-left"></i> Download TinkerCode 64-bit Package<br>(include drivers, libraries and Arduino)<br>for Windows</a>
+							<br><br>
+							<a class="btn btn-lg btn-success" href="agents/TinkerCodeSetup1_0_4.exe">
+								<i class="fa fa-windows fa-2x pull-left"></i> Download TinkerCode (Agent only) <br>for Windows</a>
+							<br><br>
+							<a class="btn btn-lg btn-info" href="agents/TinkerCode1_0_4.dmg">
+								<i class="fa fa-apple fa-2x pull-left"></i> Download TinkerCode (Agent only) <br>for Mac</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&#215;</span></button>
+					<h4>
+						<span class="glyphicon glyphicon-list-alt"></span>
+						<label class="modal-title">Choose an Example</label>
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div class="table-responsive">
+						<table class="table table-hover">
+							<tbody id="includedContent">
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--only for IDE mode -->
+	<div id="arduino_IDE_code"> </div>
+</body>
+
+</html>

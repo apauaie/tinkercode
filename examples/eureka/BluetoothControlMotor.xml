@@ -1,0 +1,170 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_ARRAY,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_ARDUINO_SERVO,CAT_TUAH,CAT_EUREQA</toolboxcategories>
+  <toolbox>toolbox_algo</toolbox>
+  <block type="base_setup_loop" id="PqaV+#k[LB_g:L_.We-X" x="-571" y="51">
+    <statement name="LOOP">
+      <block type="controls_if" id="ts/i`I||C}~=,lQY.L-S">
+        <value name="IF0">
+          <block type="eureqa_bluetooth_ready" id="VG:p$U]6{6=^CD*a/2cs"></block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set" id="G4,?f|6I5)_]T{Y;TjT(">
+            <field name="VAR">data</field>
+            <value name="VALUE">
+              <block type="variables_set_type" id="!ss,E2Kj7jN7%(Xy=c+y">
+                <field name="VARIABLE_SETTYPE_TYPE">CHARACTER</field>
+                <value name="VARIABLE_SETTYPE_INPUT">
+                  <block type="eureqa_bluetooth_data" id="gcMtS5CisFXed.jOe{],"></block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="serial_println" id="}N|~,[simbJHyP,l%-WV">
+                <value name="CONTENT">
+                  <block type="variables_get" id="c:!lodKtg[%VD4TBSrSb">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="controls_if" id="B-K!#8).ks-@Zmz1mT3q">
+            <mutation elseif="3" else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id=".a9ZZWEGj4WGTWKtN%`L">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id=")I:Z$6xkm|ei}h*u{gP6">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_char" id="};rsRrZdN^iWdQTdpA-f">
+                    <field name="TEXT">f</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="eureqa_motor_steer" id="S`e#?{3ay,Nv!S40Qhw.">
+                <field name="DIR">forward</field>
+                <value name="SPEED">
+                  <block type="math_number" id="TtSaJ?B/JR;eMU2V;zUu">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="i3jvW|2w3UxR[DI1|6S}">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="EhImlpB8+H#Pl}(Ha/Dr">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_char" id="^,Y6#Gipmh|=DDgjf)em">
+                    <field name="TEXT">b</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="eureqa_motor_steer" id="m,ku_f=y/L,75k--.@Mm">
+                <field name="DIR">backward</field>
+                <value name="SPEED">
+                  <block type="math_number" id="n.ScJNN)xc|;$%SmafV5">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF2">
+              <block type="logic_compare" id="s{Z)^7$)u*_}Qi7v+u.l">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="X:g7[w%;`Lse;4VJJ*Y`">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_char" id="z%Ul0V,/K0]zw[wA{oqk">
+                    <field name="TEXT">l</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO2">
+              <block type="eureqa_motor_steer" id="nRYtFIB/^7C$N/dvVnJy">
+                <field name="DIR">left</field>
+                <value name="SPEED">
+                  <block type="math_number" id="UE.^8[`J3H^GMYW1x)pJ">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF3">
+              <block type="logic_compare" id="saT/1fsFvA;d![#ORlv]">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="ZawyBBhr35t2^9`ILkJP">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_char" id="hx,I-2zEd;d:pjpR$T[b">
+                    <field name="TEXT">r</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO3">
+              <block type="eureqa_motor_steer" id="yp|G+#sb^v*NLa66]p!q">
+                <field name="DIR">right</field>
+                <value name="SPEED">
+                  <block type="math_number" id="$L-VKTj*_keUg|(u]NSI">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="eureqa_motor_steer" id="VJr_%I@Tia~yRN#3.e~%">
+                <field name="DIR">stop</field>
+                <value name="SPEED">
+                  <block type="math_number" id="hp3[Zp5m5:Yea;O-YbDv">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="eureqa_rgb_num" id="6BL8nDC})_sj+)a)_k7.">
+                    <field name="port">13,PORTB,PORTB5</field>
+                    <value name="red_color">
+                      <block type="math_number" id="t;*uBhtR?|8K3Fmi}cnk">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                    <value name="green_color">
+                      <block type="math_number" id="D_Z0Ng[_JX_WD_HZf[V+">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                    <value name="blue_color">
+                      <block type="math_number" id="~o|B9`[lE[HZN2w[[ul!">
+                        <field name="NUM">100</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

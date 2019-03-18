@@ -1,0 +1,156 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_ARRAY,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_ARDUINO_SERVO,CAT_TUAH,CAT_EUREQA</toolboxcategories>
+  <toolbox>toolbox_algo</toolbox>
+  <block type="variables_set" id="dMDCAE*J|+^vU.nvM~R~" x="-548" y="-40">
+    <field name="VAR">data</field>
+    <value name="VALUE">
+      <block type="variables_set_type" id="+Y/+!RT`$%Z+GY:-O0!o">
+        <field name="VARIABLE_SETTYPE_TYPE">CHARACTER</field>
+        <value name="VARIABLE_SETTYPE_INPUT">
+          <block type="eureqa_colorsensor" id="/PxJ^{~@WBMDF7:_t9pD">
+            <field name="PORTo">PORTC</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="serial_println" id="V_|QIhXLIw3]Q2|UPh6P">
+        <value name="CONTENT">
+          <block type="variables_get" id="A`|R2{Mm~nvLP)sxp7cd">
+            <field name="VAR">data</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_if" id="@Gb3:#AYN^Oy(=;=b_ig">
+            <mutation elseif="2" else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_compare" id="SVUI$DF4)HA81m=jtok?">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="oV[/5QOf8rCCe/lUsXku">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_char" id="[[4*k3,~GWKlpKXKcD7I">
+                    <field name="TEXT">r</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="eureqa_rgb_num" id="jjWEWV`HD@]qq!dNzbLm">
+                <field name="port">7,PORTD,PORTD7</field>
+                <value name="red_color">
+                  <block type="math_number" id="}x9`j|B=0]V|{]LoO8:@">
+                    <field name="NUM">255</field>
+                  </block>
+                </value>
+                <value name="green_color">
+                  <block type="math_number" id="8:h3a%cli^9RY,;nEV%z">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="blue_color">
+                  <block type="math_number" id="TzI/(S:}F)6zt${pqqS3">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF1">
+              <block type="logic_compare" id="aK?]0EM5YC8f$`F@E?ZF">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="8ch.yp#l-zb5Pojy:fiV">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_char" id="a8~nRNf0yCTlge%xMy7m">
+                    <field name="TEXT">g</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO1">
+              <block type="eureqa_rgb_num" id="4]qe|YoiQQdG/7V^h{H3">
+                <field name="port">7,PORTD,PORTD7</field>
+                <value name="red_color">
+                  <block type="math_number" id="K3r]510r(9:=MDA;nOH7">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="green_color">
+                  <block type="math_number" id="oY^IzK^:7sU,[T8@9:3W">
+                    <field name="NUM">255</field>
+                  </block>
+                </value>
+                <value name="blue_color">
+                  <block type="math_number" id="W7{/5,14?+90cq+Esz4)">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <value name="IF2">
+              <block type="logic_compare" id="?B*F2oEvC4FH=!!YHCIM">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="variables_get" id="hBncMmzgspV!34EXN2bX">
+                    <field name="VAR">data</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="text_char" id="kd?#Rx9QzOF{)0wn86U-">
+                    <field name="TEXT">b</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO2">
+              <block type="eureqa_rgb_num" id="61^RBs)z-P`oZ*vpiuoj">
+                <field name="port">7,PORTD,PORTD7</field>
+                <value name="red_color">
+                  <block type="math_number" id="8c*=-^2aK`}uvIzBO|44">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="green_color">
+                  <block type="math_number" id="k}Wk].G2Mpw@OEHiSvwK">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="blue_color">
+                  <block type="math_number" id="oi@MIB[pvi1TpoV?m%V3">
+                    <field name="NUM">255</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="eureqa_rgb_num" id="N1bOENaGPfWxwE[t7nk3">
+                <field name="port">7,PORTD,PORTD7</field>
+                <value name="red_color">
+                  <block type="math_number" id="/Z)ywS}/En]%(x6BXTc!">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="green_color">
+                  <block type="math_number" id="oB)Yh-o;#ra5,g,8{?5D">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="blue_color">
+                  <block type="math_number" id="ZWwx=(G)q$7aAI}oX-]z">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

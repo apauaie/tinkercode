@@ -1,0 +1,420 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <toolboxcategories>CAT_LOGIC,CAT_LOOPS,CAT_MATH,CAT_ARRAY,CAT_TEXT,CAT_VARIABLES,CAT_FUNCTIONS,CAT_ARDUINO,CAT_ARDUINO_SERVO,CAT_TUAH,CAT_EUREQA</toolboxcategories>
+  <toolbox>toolbox_algo</toolbox>
+  <block type="base_setup_loop" id="Rs;fT5U7GOA#KFM!K,gB" x="-713" y="-915">
+    <statement name="DO">
+      <block type="variables_set" id="/r8NgE7uVx1bNK]TFg:/">
+        <field name="VAR">blue</field>
+        <value name="VALUE">
+          <block type="variables_set_type" id="Y,jpA;IZlZh+wz[QBG_S">
+            <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+            <value name="VARIABLE_SETTYPE_INPUT">
+              <block type="math_number" id="]]+r44?r~R#BY.985Se#">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="w-z8L#?Iw:jzU$*aXQBM">
+            <field name="VAR">green</field>
+            <value name="VALUE">
+              <block type="variables_set_type" id="-{aL9sTdXZo^bqZa9p$M">
+                <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                <value name="VARIABLE_SETTYPE_INPUT">
+                  <block type="math_number" id="NKgm||Lpc5ER}avd@,()">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="=6$fHjF7KmvRYKkd(@bV">
+                <field name="VAR">red</field>
+                <value name="VALUE">
+                  <block type="variables_set_type" id="`,=dE*y{SPMOUhldsub8">
+                    <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                    <value name="VARIABLE_SETTYPE_INPUT">
+                      <block type="math_number" id="A{`NA2K{*n11/foXivtO">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="IPI9:xexE=ZOW-P+Q*k@">
+                    <field name="VAR">data</field>
+                    <value name="VALUE">
+                      <block type="variables_set_type" id="?]8OgoxKeyKM**UY+|Dl">
+                        <field name="VARIABLE_SETTYPE_TYPE">NUMBER</field>
+                        <value name="VARIABLE_SETTYPE_INPUT">
+                          <block type="math_number" id="NSbqh}ET0RsSd*r0M32/">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <statement name="LOOP">
+      <block type="controls_for" id="}te#1]{VoW{p|EA=t+`W">
+        <field name="VAR">red</field>
+        <value name="FROM">
+          <shadow type="math_number" id="EPBDu;6O]69c8Z4AnBYU">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id="Jm$%((4,Ar%%!S%@*SsV">
+            <field name="NUM">255</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id="D_%an!Ks;~A~crV=UERu">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="eureqa_rgb_num" id="sT}oXZ)6x+{%aLEtwax9">
+            <field name="port">7,PORTD,PORTD7</field>
+            <value name="red_color">
+              <block type="variables_get" id="3gc`qE,vPCzh6$wNy:s[">
+                <field name="VAR">red</field>
+              </block>
+            </value>
+            <value name="green_color">
+              <block type="variables_get" id="hGP$~@uXiI;MNN1/6dY{">
+                <field name="VAR">green</field>
+              </block>
+            </value>
+            <value name="blue_color">
+              <block type="variables_get" id="O$3_]xn~Iw!(G:%xuY~@">
+                <field name="VAR">blue</field>
+              </block>
+            </value>
+            <next>
+              <block type="base_delay" id="A(O|ng7;,CysE.ad1F:r">
+                <value name="DELAY_TIME">
+                  <shadow type="math_number" id="@HB=?U~3A)}=6l%eVVg|">
+                    <field name="NUM">5</field>
+                  </shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="variables_set" id="mPzC?v6({cYIBjB*j!}6">
+            <field name="VAR">red</field>
+            <value name="VALUE">
+              <block type="math_number" id=")ggy4MA(3yjbh7fcQJ-z">
+                <field name="NUM">255</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_for" id="|zh1SlvBb5}1*XQEHG9R">
+                <field name="VAR">green</field>
+                <value name="FROM">
+                  <shadow type="math_number" id="1?6#biv5Zs+CGI*G$%bN">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <value name="TO">
+                  <shadow type="math_number" id="98tt?KS67Z2!=IOrGK~p">
+                    <field name="NUM">255</field>
+                  </shadow>
+                </value>
+                <value name="BY">
+                  <shadow type="math_number" id="m8wD{977)zG[SQ`3OgTk">
+                    <field name="NUM">1</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="eureqa_rgb_num" id="j.T_k(.%Nf!]S#+?VjgS">
+                    <field name="port">7,PORTD,PORTD7</field>
+                    <value name="red_color">
+                      <block type="variables_get" id="|HtBbt%k4n[H,w/JyG.b">
+                        <field name="VAR">red</field>
+                      </block>
+                    </value>
+                    <value name="green_color">
+                      <block type="variables_get" id="jk?K`1?(ZW$}[6I6ecdU">
+                        <field name="VAR">green</field>
+                      </block>
+                    </value>
+                    <value name="blue_color">
+                      <block type="variables_get" id="i294aME|TGE+WH6R;c{C">
+                        <field name="VAR">blue</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="base_delay" id="0Y?4rL[vP9-@dQsW#(?!">
+                        <value name="DELAY_TIME">
+                          <shadow type="math_number" id="upe`c|Qg|vp.J.T.6cRa">
+                            <field name="NUM">5</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="variables_set" id="=^*Ql@+-py)kw[=[)PCI">
+                    <field name="VAR">green</field>
+                    <value name="VALUE">
+                      <block type="math_number" id="#2;bvmOq;6zYamC@b/$:">
+                        <field name="NUM">255</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_for" id="{dGRnYncR{EaqQ3VCZQZ">
+                        <field name="VAR">blue</field>
+                        <value name="FROM">
+                          <shadow type="math_number" id="j3`r(N:iLo*s_^55sa/j">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <value name="TO">
+                          <shadow type="math_number" id=")D*y/;IAJ_]+ySuxSUAI">
+                            <field name="NUM">255</field>
+                          </shadow>
+                        </value>
+                        <value name="BY">
+                          <shadow type="math_number" id=",1,v9NCQUx.fE$Hr1+},">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                        <statement name="DO">
+                          <block type="eureqa_rgb_num" id="]yth5!%RFq_KRsU%k@iR">
+                            <field name="port">7,PORTD,PORTD7</field>
+                            <value name="red_color">
+                              <block type="variables_get" id="PL+X}]u[U{ucxi0/S2I3">
+                                <field name="VAR">red</field>
+                              </block>
+                            </value>
+                            <value name="green_color">
+                              <block type="variables_get" id="]O0qv+k7R[KL:IUFp-V=">
+                                <field name="VAR">green</field>
+                              </block>
+                            </value>
+                            <value name="blue_color">
+                              <block type="variables_get" id="u$]a?XCnJ.mc)9_D-XP1">
+                                <field name="VAR">blue</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="base_delay" id="VOut)i8r+QKubBb4?URf">
+                                <value name="DELAY_TIME">
+                                  <shadow type="math_number" id="i]p@p%?{|n7E(1=(x,G|">
+                                    <field name="NUM">5</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="variables_set" id="|SBY^(?(T|1/XAGB,IK^">
+                            <field name="VAR">blue</field>
+                            <value name="VALUE">
+                              <block type="math_number" id="PF*A:|*2y}ZVQvFsx~JH">
+                                <field name="NUM">255</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="controls_for" id="DDv_.o*F+2~d1aIi8h)x">
+                                <field name="VAR">green</field>
+                                <value name="FROM">
+                                  <shadow type="math_number" id="go0O_,tC0=b#%qhb)tw8">
+                                    <field name="NUM">255</field>
+                                  </shadow>
+                                </value>
+                                <value name="TO">
+                                  <shadow type="math_number" id="d6e}/|;rUwQ?*}.Af5{;">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                                <value name="BY">
+                                  <shadow type="math_number" id="+5!KHo}X,/uu@8##eKQ%">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                                <statement name="DO">
+                                  <block type="eureqa_rgb_num" id="A^z@YF!Igo2Y?x~:!e2V">
+                                    <field name="port">7,PORTD,PORTD7</field>
+                                    <value name="red_color">
+                                      <block type="variables_get" id="(e2]_7HfIFyeask9q?={">
+                                        <field name="VAR">red</field>
+                                      </block>
+                                    </value>
+                                    <value name="green_color">
+                                      <block type="variables_get" id="#:)yhMtS1`{bc(p#|zO{">
+                                        <field name="VAR">green</field>
+                                      </block>
+                                    </value>
+                                    <value name="blue_color">
+                                      <block type="variables_get" id="{eU1g!~OC^KU3jSyMx`A">
+                                        <field name="VAR">blue</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="base_delay" id="[;!Q=MRh|,#yrR5d~$CM">
+                                        <value name="DELAY_TIME">
+                                          <shadow type="math_number" id="`H7$M6oozs)C^:17CdG|">
+                                            <field name="NUM">5</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="variables_set" id="oNL;Sh3D)#J*k,$HFZ6G">
+                                    <field name="VAR">green</field>
+                                    <value name="VALUE">
+                                      <block type="math_number" id="MoH`w!I^o]=uTf7+;bXn">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="controls_for" id="OIoGkO{grjeILXeg8|+E">
+                                        <field name="VAR">red</field>
+                                        <value name="FROM">
+                                          <shadow type="math_number" id="V+sN..3m}pEeE!nO3$D(">
+                                            <field name="NUM">255</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="TO">
+                                          <shadow type="math_number" id="rWU[*C2dnLQ,??W.y~L^">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="BY">
+                                          <shadow type="math_number" id="M(YQZ$3{~IC]{zZ;Knv~">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                        </value>
+                                        <statement name="DO">
+                                          <block type="eureqa_rgb_num" id="iwG.ruWF+(?(K[p-uwXL">
+                                            <field name="port">7,PORTD,PORTD7</field>
+                                            <value name="red_color">
+                                              <block type="variables_get" id="j??_@N_`~LiM-hw|Ny!]">
+                                                <field name="VAR">red</field>
+                                              </block>
+                                            </value>
+                                            <value name="green_color">
+                                              <block type="variables_get" id="/.Ue%.nCkC`$!}I*G|`B">
+                                                <field name="VAR">green</field>
+                                              </block>
+                                            </value>
+                                            <value name="blue_color">
+                                              <block type="variables_get" id="xvD9sM3hs-`kRmR7`;=7">
+                                                <field name="VAR">blue</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="base_delay" id="kh71(%*dnH3%HYkfm_5L">
+                                                <value name="DELAY_TIME">
+                                                  <shadow type="math_number" id="|kP|;{r.*)vTBm)c@KMW">
+                                                    <field name="NUM">5</field>
+                                                  </shadow>
+                                                </value>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="variables_set" id="7z3`fek!,db({*[C6Ati">
+                                            <field name="VAR">red</field>
+                                            <value name="VALUE">
+                                              <block type="math_number" id="v1:+aiC?%/u/6,s;3TB]">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="controls_for" id="sGFjzg|`[+[U:b_aCiVJ">
+                                                <field name="VAR">blue</field>
+                                                <value name="FROM">
+                                                  <shadow type="math_number" id=".LE0DGm^T{YbLQ5o0boP">
+                                                    <field name="NUM">255</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="TO">
+                                                  <shadow type="math_number" id="*p~8BhBvU*|#2Mg;FBGz">
+                                                    <field name="NUM">1</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="BY">
+                                                  <shadow type="math_number" id="%4[0K,R^]V{gDS7__%W@">
+                                                    <field name="NUM">1</field>
+                                                  </shadow>
+                                                </value>
+                                                <statement name="DO">
+                                                  <block type="eureqa_rgb_num" id="uZw1U1o6MTAmH^[5w$h-">
+                                                    <field name="port">7,PORTD,PORTD7</field>
+                                                    <value name="red_color">
+                                                      <block type="variables_get" id="Hl|E32+CSkhQfrg-,eWF">
+                                                        <field name="VAR">red</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="green_color">
+                                                      <block type="variables_get" id="Ns+9Ma@N#]UDi.2+cE*d">
+                                                        <field name="VAR">green</field>
+                                                      </block>
+                                                    </value>
+                                                    <value name="blue_color">
+                                                      <block type="variables_get" id="d(jShHqPL}KiWvZ-KMDh">
+                                                        <field name="VAR">blue</field>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="base_delay" id="RG=[LDGHx.CrVO;7aCS.">
+                                                        <value name="DELAY_TIME">
+                                                          <shadow type="math_number" id="Vvf|!+Juhi(v%LN]TrBw">
+                                                            <field name="NUM">5</field>
+                                                          </shadow>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                                <next>
+                                                  <block type="variables_set" id="aAUafgCoPpZ)!;DkuIRE">
+                                                    <field name="VAR">red</field>
+                                                    <value name="VALUE">
+                                                      <block type="math_number" id="P.*@X@Jo5C4=s$0.pQ^e">
+                                                        <field name="NUM">0</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
